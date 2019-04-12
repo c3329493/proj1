@@ -1,22 +1,26 @@
-#include<stdio.h>
-#include<string.h>
- /*
-ASCII 65>letter>90
-Encrypted letter = (InputLetter + Key)%26  
-PlainTextLetter = ( Encrypted letter - key)%26
+#include <stdio.h>
+/*PlainTextLetter = ( Encrypted letter - key)%26
 if resultafter brackets is negative, + 26 to it before %26
-*/
-void rotationcipher(char* inputText, int k)
 
+void rotationcipher(char* inputText, int k)
+*/
 int main(void){
-    int k=1
-    char InputText[101]
-    printf("Input Text to be Encrypted")
-    scanf("%c", InputText)
+
+int i;
+char message[500];//declare string
+int key;//initilaise key
+printf("Enter Cipher Key <space> Enter Phrase to be encrypted:\n\n");
+scanf("%d", &key);
+scanf("%[^\n]s", message);
+for( i=0; i<500; i++ ){
+    if (97 < message[i] && message[i] < 122){
+        message[i] = message[i]-32;//if character is uppercase -32 will make it lower case (in the ASCII table)
+    }
+    if (message[i]<65 || message[i]>122);//do nothing since the character is outside lower and uppercase alphabet
+    else {
+        message[i] = message[i] + (key%26); //formula for encryption, roatate around alphabet by key
+    }
 }
-if (n>122 || n<65){ // ASCII code of alphabet lower and uppercase i lies between 65 and 122
-    printf("%n") // print value of character without encryption
+printf("%s\n", message);
 }
-/*If an input byte is outside of the ranges [65, 90] and [97, 122] then it can be copied to the output without
-modification. If an input byte is in the lower case range, [97, 122], then you should subtract 32 from its
-value to make it an upper case letter prior to encryption.*/
+
