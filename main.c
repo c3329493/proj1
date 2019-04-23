@@ -3,9 +3,26 @@ int RotationEncryption(void);
 
 int main(void){
 RotationEncryption();
+RotationDecryption();
 return 0;
 }
 
+int RotationDecryption(void)
+{
+    int i;
+    char message[500];//declare string
+    int key;//initilaise key
+        printf("Enter Cipher Key <space> Enter Phrase to be decrypted:\n\n");
+        scanf("%d", &key);
+        scanf("%[^\n]s", message);
+    for( i=0; i<500; i++ ){
+        if (message[i]<65 || message[i]>122);//do nothing since the character is outside lower and uppercase alphabet
+        else {
+            message[i] = message[i] - (key%26); //formula for encryption, roatate around alphabet by key
+}
+}
+printf("%s\n", message);
+}
 
 int RotationEncryption(void)
 {
