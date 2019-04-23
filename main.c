@@ -2,6 +2,7 @@
 int RotationEncryption(void);
 
 int main(void){
+SubsitutionEncryption();
 RotationEncryption();
 RotationDecryption();
 return 0;
@@ -42,4 +43,10 @@ int RotationEncryption(void)
     }
 }
 printf("%s\n", message);
+}
+
+int SubsitutionEncryption();
+{
+    int i;
+    char message[500];//declare string
 }
