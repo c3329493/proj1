@@ -1,10 +1,13 @@
 #include <stdio.h>
+
 int RotationEncryption(void);
 int RotationDecryption(void);
 int SubsitutionEncryption(void);
+int SubstitutionDecryption(void);
 
 int main(void){
 SubsitutionEncryption();
+SubstitutionDecryption();
 RotationEncryption();
 RotationDecryption();
 return 0;
@@ -56,8 +59,47 @@ OriginalText[i] = OriginalText[i]-32;//if character is lowercase -32 will make i
 printf("%s\n", OriginalText);//prints the encrypted message to the console
 }
 
-int SubsitutionEncryption(char code[], char char_to_find)
-{
-    if
-    char message[500];//declare string
+int SubstitutionEncryption(void){
+    int i;
+    int m;
+    char message[150] = "test text";
+    char key[26] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+
+for (i=0; message[i] != '\0'; i++ ){
+    if (96 < message[i] && message[i] < 123){       //boundary ensures if lowercase make it upper
+    message[i] = message[i]-32;                     //if character is lowercase -32 will make it uppercase (in the ASCII table)
+        if (message[i]<65 || message[i]>122);       //do nothing since the character is outside lower and uppercase alphabet
+        else{ 
+        message[i] = message[i]-65;
+        }  
+        m = message[i];
+        message[i] = key[m];//to get number  0 -25
+    }
 }
+
+printf("%s\n", message);
+    
+}
+ int SubstitutionDecryption(void){
+    int i;
+    int m;
+    char message[150] = {"TTST TTXT"};//e swapped for t 
+    char key[26] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+
+        for ( m=0; message[i] != '\0'; m++){
+        int m = 0
+     }
+        if( message[i]<91 && message[i]>64) {
+        while ( message[i] != key[m]){
+            m=m+1
+   }   
+            m=m+65
+            message[i] = m
+        }
+    }
+            printf("%s\n", message[i])
+    }     
+     
+     
+     
+     
