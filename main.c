@@ -1,18 +1,20 @@
 #include <stdio.h>
 
-int RotationEncryption(void);
-int RotationDecryption(void);
-int SubsitutionEncryption(void);
-int SubstitutionDecryption(void);
-
-int main(void){
-SubsitutionEncryption();
-SubstitutionDecryption();
-RotationEncryption();
-RotationDecryption();
+    int RotationEncryption(void);
+    int RotationDecryption(void);
+    int SubsitutionEncryption(void);
+    int SubstitutionDecryption(void);
+    
+    int main(void){
+    SubsitutionEncryption();
+    SubstitutionDecryption();
+    RotationEncryption();
+    RotationDecryption();
 return 0;
 }
-
+int number =2;
+switch (number){
+      case 1:
 int RotationDecryption(void)//declare the decryption function definition 
 {
     int i;
@@ -35,7 +37,8 @@ int RotationDecryption(void)//declare the decryption function definition
 }
     printf("%s\n", message);//prints the encrypted message to the console
 }
-
+    break;
+    case 2:
 int RotationEncryption(void)//declare the encryption function definition 
 {
     int i;//initialise the integer i which is used to count or increment through each chracter
@@ -58,14 +61,15 @@ OriginalText[i] = OriginalText[i]-32;//if character is lowercase -32 will make i
  }
 printf("%s\n", OriginalText);//prints the encrypted message to the console
 }
-
+    break;
+    case 3:
 int SubstitutionEncryption(void){
     int i;
     int m;
-    char message[150] = "test text";
-    char key[26] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    char message[150] = "test text"; //initialise array for phrase to be encrypted
+    char key[26] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};//initialise array for key which can be randomised to test code
 
-for (i=0; message[i] != '\0'; i++ ){
+for (i=0; message[i] != '\0'; i++ ){ //initialise i equal to 0, provide a exit condition and increment i to cycle through the phrase
     if (96 < message[i] && message[i] < 123){       //boundary ensures if lowercase make it upper
     message[i] = message[i]-32;                     //if character is lowercase -32 will make it uppercase (in the ASCII table)
         if (message[i]<65 || message[i]>122);       //do nothing since the character is outside lower and uppercase alphabet
@@ -77,29 +81,33 @@ for (i=0; message[i] != '\0'; i++ ){
     }
 }
 
-printf("%s\n", message);
+printf("%s\n", message);//print encrypted phrase to the console
     
 }
- int SubstitutionDecryption(void){
+break;
+case 4:
+ int SubstitutionDecryption(){
     int i;
     int m;
-    char message[150] = {"TTST TTXT"};//e swapped for t 
-    char key[26] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-
-        for ( m=0; message[i] != '\0'; m++){
-        int m = 0
-     }
-        if( message[i]<91 && message[i]>64) {
-        while ( message[i] != key[m]){
-            m=m+1
+    char message[] = {"TTST TTXT"};//initialise array for encrypted phrase
+    char key[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};//initialise array for key 
+       for ( i = 0; message[i] != 0; i++){ //initialise i equal to 0, provide a exit condition and increment i to cycle through the phrase
+       if (message[i]<123 && message[i]>96)//if the ASCII value of the character is within this range it is lowercase
+           message[i] = message[i] - 32;//subtract 32 from its value to change it to an uppercase leter
+       }
+    
+        if( message[i]<91 && message[i]>64) {//if the character is uppercase
+            int x=0;//start x at 0
+        while ( message[i] != key[x]){
+            x=x+1;//increment x by 1 after each loop 
    }   
-            m=m+65
-            message[i] = m
-        }
+            x=x+65;//assign the value of x to (x + 65) 
+            message[i] = x;
+            
+        }}
+            printf("%c", message[i]); //print the decrypted phrase to the console
     }
-            printf("%s\n", message[i])
-    }     
-     
-     
+}
+        
      
      
