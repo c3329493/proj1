@@ -1,5 +1,7 @@
 #include <stdio.h>
 int RotationEncryption(void);
+int RotationDecryption(void);
+int SubsitutionEncryption(void);
 
 int main(void){
 SubsitutionEncryption();
@@ -29,15 +31,6 @@ int RotationDecryption(void)//declare the decryption function definition
 }
 }
     printf("%s\n", message);//prints the encrypted message to the console
-}
-
-
-int RotationEncryption(void);
-
-int main(void){
-
-RotationEncryption();
-return 0;
 }
 
 int RotationEncryption(void)//declare the encryption function definition 
