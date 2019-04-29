@@ -1,7 +1,6 @@
 #include <stdio.h>
   int main(void){ //declare main function which constitutes all of the code
        
-
 int number = 4; //setting up switch case to naviagte through code
 switch (number){/*start switch statement will allow user to navigate through code 1 being rotational decrypting, 
 2 being rotational encrypting, 3 being substitution encryption and 4 being substitution decryption */
@@ -16,7 +15,7 @@ switch (number){/*start switch statement will allow user to navigate through cod
     message[i] = message[i]-32;//preiovus line and this line ensure the message is only an uppercase letter by altering the ASCII value of lower case letters
     }
 //if character is lowercase -32 will make it uppercase (in the ASCII table)
-        if (message[i]<65 || message[i]>122);//do nothing since the character is outside lower and uppercase alphabet
+        if (message[i]<65 || message[i]>122);//do nothing since the character is outside lower and uppercase alphabet 
         else {
             message[i] = message[i] - (key%26); //formula for decryption, roatate around alphabet by key
              if (message[i] <65){
@@ -26,7 +25,7 @@ switch (number){/*start switch statement will allow user to navigate through cod
   printf("%c", message[i]);//prints the decrypted message to the console
 }
  }
-break;//breaks out of case 1 and tells the compiler to not execute the code below
+break; // breaks out of case 1 and tells the compiler to not execute the code below
 case 2://encrypted rotaional cipher
 
 {
@@ -100,5 +99,4 @@ case 4: //decrypting substitution cipher
    }
    return 0;
   }
-
      
